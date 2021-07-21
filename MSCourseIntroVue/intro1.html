@@ -1,0 +1,32 @@
+ <!---Notas sobre la clase de Vue.
+
+Vue is designed as what they call a progressive framework -> you can either build 
+your entire app from scratch by using Vue or you can add it into an existing application.
+
+It allows you to inject it as you need it.
+
+You're also going to notice that it plays really well with existing HTML, that you'll be able to use very similar syntax inside of 
+your HTML by adding in different attributes or otherwise to be able to interact with the framework.
+
+Vue is going to make it easier for you to create dynamic web pages. 
+Web pages that can reply to changes in data, that can respond to different user interactions and so forth. 
+That's what we're going to explore in this video series. We'll start with how you can create that initial hello world.
+
+We'll see how we can implement some logic, how we can create our own custom components that will actually behave an awful lot like our own custom HTML if we want, and how we can utilize 
+this really neat little command line interface that will allow us to actually create and bootstrap an application and interact with it that way.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="./vue/intro.vue">
+    <title>Page Title</title>
+</head>
+<body>
+<div id="app-2">
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+  </span>
+</div>
+</body>
+</html>
