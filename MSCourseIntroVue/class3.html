@@ -1,0 +1,59 @@
+<!--
+
+    Many HTML tags are configured via attributes - images have an src attribute, links have an href attribute, etc. 
+    Because we may need to set these dynamically when using a framework, Vue.js provides different ways to bind to attribute values. 
+    We’ll see how you can bind to an attribute.
+
+when you're working with HTML you frequently need to be able to set different attributes.
+If we're going to be making our page dynamic, we will need to be able to dynamically set attributes.
+
+for example: an image, the only way that we are going to display is to set values-> set values inside of those attributes
+bind attributes from vue, inside of you utilizing what's known as a directive.
+
+directives in vue are going to start with either the colon in certain cases for shortcuts.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog pictures</title>
+</head>
+<body>
+
+    <div id = "app">
+        <!--now here it displays info from the script-->
+        <!-- to display info inside of Vue: handlebars {{}}-->
+        {{ message }} <!--print whatever it is that we have-->
+
+     <!---whenever you see V-, that's going to be a Vue directive. --->
+        <img 
+            v-bind:src="imageSource"
+            V-bind:alt="imageAlt"
+        />
+
+    </div>
+
+    <!--Add in Vue.js -->
+    <script src="https://unpkg.com/vue@next"></script> <!--CDN-->
+    <script>
+        const App = { 
+            // we can return data and this is done through a function (below)
+            //this is going to be the core of everything that we'll be doing inside of Vue
+            // add method, props and so forth. 
+            data(){  //core information that our app is going to be able to interact with.
+                return {
+                    message: 'Dog pictures',
+                    imageSource: './images/maxresdefault.jpg',
+                    imageAlt: 'Picture of a cute dog having fun'
+                }
+            }
+        }
+        //we can use Vue and then pass in that app object that i've created
+        //where on my page should it look?
+        Vue.createApp(App).mount('#app') //pointing it at the id of some HTML Element on our page.
+
+    </script>
+</body>
+</html>
