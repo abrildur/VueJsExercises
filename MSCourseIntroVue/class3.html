@@ -57,3 +57,36 @@ directives in vue are going to start with either the colon in certain cases for 
     </script>
 </body>
 </html>
+
+<!--
+
+
+    That if we think about certain elements, say like an image, the only way that it's ever going to display is if we
+    set values inside of those attributes. Now, unfortunately, we're not going to be able to use that same double curly brace syntax, those handlebars, as we did when we wanted to display text.
+    Fortunately, we do have the ability to bind to attributes inside of you utilizing what's known as a directive.
+    
+    Let's see how we can do this. What I'm going to do is I'm going to add in an image tag here. Let's go ahead and just go like this and I'm going to say src equals and then whatever our source is supposed to be,
+    and then alt, and then whatever our alt text is going to be.
+
+    That's of course, how we go in and display out an image. I now want to bind this dynamically. What I'm going to do, is I'm going to
+    update our data to add in a couple of values here. I'm going to say beyond message, I'm going to add an image source. Let's set this to be in my case, images. Sammy bath.png.
+
+    You'll notice if I go into my files here that I've got that little image there. It's a picture of our cute little dog who,
+    as you will see, does not care very much for bath time. I'll add that in as a property and then we'll also say image alt because we should always add alt text to our images.
+
+Let's set this to then be a picture of a cute dog not enjoying bath time. There we go.
+
+Perfect. Now, let's go ahead and bind this up.Now, the way that we're going to bind this up is by using a directive.
+
+Directives in view are going to start with either the colon in certain cases for shortcuts, and we'll see that in a little bit later and with V-.
+
+Whenever you see V-, that's going to be a view directive.
+
+Specifically, we're going to use V- bind, which will create a one way binding here. It's going to take whatever this value is and it's going to place it for read purposes inside of here.
+This is now going to be bound to our source property.
+We can go ahead and read out our image source.Then let's do the same thing with alt V bind alt, and then image alt.
+Perfect. Now, I've got my source and my alt all wired up here.
+
+You'll notice down below, again, my image source my image alt, and that is set to the location of the image into the appropriate alt text. Let me go ahead and save this.
+That's how we can go in and then bind and wire up all of the attributes inside a view by utilizing that V- bind.
+-->
