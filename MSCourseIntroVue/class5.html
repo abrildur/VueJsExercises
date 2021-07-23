@@ -9,39 +9,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog pictures</title>
+    <title>Helecloud</title>
 </head>
 <body>
-
+    <h1>Available cruises</h1>
     <div id = "app">
-        <span :class="messageClasses">
-        <!--now here it displays info from the script-->
-        <!-- to display info inside of Vue: handlebars {{}}-->
-        {{ message }} <!--print whatever it is that we have-->
-        </span> <!--revisa el minuto 1:58 para ver el como es que generaliza las etiquetas para el css-->
-     <!---whenever you see V-, that's going to be a Vue directive. --->
-        <img 
-            v-bind:src="imageSource"
-            V-bind:alt="imageAlt"
-        />
-
+        <div>
+            {{ cruise.name }}
+            <button v-show = "cruise.seatsAvailable"> 
+               <span v-if="cruise.earlyBirdAvailable">Book Early Bird!</span>
+               <span v-else>Book Now!</span>  
+            </button>
+        </div>
     </div>
 
     <!--Add in Vue.js -->
     <script src="https://unpkg.com/vue@next"></script> <!--CDN-->
     <script>
         const App = { 
-            // we can return data and this is done through a function (below)
-            //this is going to be the core of everything that we'll be doing inside of Vue
-            // add method, props and so forth. 
+            // 
+            // 
             data(){  //core information that our app is going to be able to interact with.
                 return {
-                    messageClasses: {
-                        important: True
-                    },
-                    message: 'Dog pictures',
-                    imageSource: './images/maxresdefault.jpg',
-                    imageAlt: 'Picture of a cute dog having fun'
+                    cruise: {
+                        seatsAvailable: true,
+                        earlyBirdAvailable: true,
+                        name: 'Cruise Tour'
+                    }
                 }
             }
         }
