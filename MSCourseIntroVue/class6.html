@@ -1,0 +1,64 @@
+<!--Looping through data in a Vue page -->
+<!--
+    when you're working with for in Vue, always set a key for each element in the loop. because what this will do is it will help Vue,
+    in case your array updates, figurate where it should go into your html to perform those updates.
+https://youtu.be/0She66rwJPk?list=PLlrxD0HtieHh33qHLWEN9uv43ie17lYqA&t=191
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helecloud</title>
+</head>
+<body>
+    <h1>Available cruises</h1>
+    <div id = "app">
+        <div v-for='{cruise, index} in cruises' :key="index"> <!-- to do it like a for loop, index would be like the key for each element in the array like [0,1,2,3, etc.]-->
+            {{ cruise.name }}
+            <button v-show = "cruise.seatsAvailable"> 
+               <span v-if="cruise.earlyBirdAvailable">Book Early Bird!</span>
+               <span v-else>Book Now!</span>  
+            </button>
+        </div>
+    </div>
+
+    <!--Add in Vue.js -->
+    <script src="https://unpkg.com/vue@next"></script> <!--CDN-->
+    <script>
+        const App = { 
+            // 
+            // 
+            data(){  //core information that our app is going to be able to interact with.
+                return {
+                    cruises: [
+                            {
+                                    seatsAvailable: true,
+                                    earlyBirdAvailable: true,
+                                    name: 'Cruise Tour to the Moon'
+                            },
+                            {
+                                    seatsAvailable: false,
+                                    earlyBirdAvailable: true,
+                                    name: 'Cruise Tour to Mars'
+                            },
+                           {
+                                    seatsAvailable: true,
+                                    earlyBirdAvailable: false,
+                                    name: 'Cruise Tour to the asteroid belt'
+                             }
+                            ]
+                }
+            }
+        }
+        //we can use Vue and then pass in that app object that i've created
+        //where on my page should it look?
+        Vue.createApp(App).mount('#app') //pointing it at the id of some HTML Element on our page.
+
+    </script>
+</body>
+</html>
